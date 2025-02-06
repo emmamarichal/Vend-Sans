@@ -1,3 +1,6 @@
 .DS_Store
 documents/vend_sans.pdf
 sources/VendSans(wght,slnt).glyphs
+sources/instance_ufos
+sources/build.ninja
+sources/.ninja_log
