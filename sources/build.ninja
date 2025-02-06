@@ -1,0 +1,552 @@
+# buildVariable: Build a variable font from a source file
+rule buildVariable
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner fontmake --output-path $out -o variable $
+      $fontmake_type $in $args $stamp
+  description = buildVariable
+
+# fix: Run gftools-fix
+rule fix
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner gftools-fix-font -o $out $args $in $stamp
+  description = fix
+
+# compress: Compress to webfont
+rule compress
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner fonttools ttLib.woff2 compress -o $out $in $
+      $stamp
+  description = compress
+
+# buildStat: Build a STAT table from one or more source files
+rule buildSTAT-operation
+  command = gftools-gen-stat --out $tempdir $args -- $in && mv $finalfile $
+      $out $stamp
+rule buildSTAT-postprocess
+  command = gftools-gen-stat --inplace $args -- $in $stamp
+
+# instantiateUfo: Create instance UFOs from a Glyphs or designspace file
+rule instantiateUfo
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner fontmake -i "$instance_name" -o ufo $
+      $fontmake_type $in $args $stamp
+  description = instantiateUfo
+
+# buildTTF: Build a TTF from a source file
+rule buildTTF
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner fontmake --output-path $out -o ttf $
+      $fontmake_type $in $args $stamp
+  description = buildTTF
+
+# autohint: Run gftools-autohint
+rule autohint
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner gftools-autohint $args -o $out $in $stamp
+  description = autohint
+
+# buildOTF: Build a OTF from a source file
+rule buildOTF
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner fontmake --output-path $out -o otf $
+      $fontmake_type $in $args $stamp
+  description = buildOTF
+
+# copy: Copy a file
+rule copy
+  command = /usr/local/opt/python@3.11/bin/python3.11 -m $
+      gftools.builder.jobrunner cp $in $out $stamp
+  description = copy
+
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpcdubr4vb
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpcdubr4vb: $
+    buildVariable VendSans.glyphs
+  operation = buildVariable
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+# Generating instance_ufos/VendSans-Light.ufo.json
+build instance_ufos/VendSans-Light.ufo.json: instantiateUfo VendSans.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Light
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-Regular.ufo.json
+build instance_ufos/VendSans-Regular.ufo.json: instantiateUfo VendSans.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Regular
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-Medium.ufo.json
+build instance_ufos/VendSans-Medium.ufo.json: instantiateUfo VendSans.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Medium
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-SemiBold.ufo.json
+build instance_ufos/VendSans-SemiBold.ufo.json: instantiateUfo VendSans.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans SemiBold
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-Bold.ufo.json
+build instance_ufos/VendSans-Bold.ufo.json: instantiateUfo VendSans.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Bold
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp5l5wu5cj
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp5l5wu5cj: $
+    buildVariable VendSans-Italic.glyphs
+  operation = buildVariable
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+# Generating instance_ufos/VendSans-LightItalic.ufo.json
+build instance_ufos/VendSans-LightItalic.ufo.json: instantiateUfo $
+    VendSans-Italic.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Light Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-Italic.ufo.json
+build instance_ufos/VendSans-Italic.ufo.json: instantiateUfo $
+    VendSans-Italic.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-MediumItalic.ufo.json
+build instance_ufos/VendSans-MediumItalic.ufo.json: instantiateUfo $
+    VendSans-Italic.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Medium Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-SemiBoldItalic.ufo.json
+build instance_ufos/VendSans-SemiBoldItalic.ufo.json: instantiateUfo $
+    VendSans-Italic.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans SemiBold Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating instance_ufos/VendSans-BoldItalic.ufo.json
+build instance_ufos/VendSans-BoldItalic.ufo.json: instantiateUfo $
+    VendSans-Italic.glyphs
+  operation = instantiateUfo
+  instance_name = Vend Sans Bold Italic
+  fontmake_type = -g
+  fontmake_args =  --verbose WARNING 
+  args =  --ufo-structure=json --instance-dir instance_ufos
+# Generating ../fonts/VendSans/webfonts/VendSans[wght].woff2
+build ../fonts/VendSans/webfonts/VendSans[wght].woff2: compress $
+    ../fonts/VendSans/variable/VendSans[wght].ttf
+  operation = compress
+# Postprocessing  with BuildSTAT
+build $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp_f75qari.buildStatstamp: $
+    buildSTAT-postprocess $
+    ../fonts/VendSans/variable/VendSans-Italic[wght].ttf $
+    ../fonts/VendSans/variable/VendSans[wght].ttf
+  stamp =  && touch $
+      /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp_f75qari.buildStatstamp
+  postprocess = buildStat
+  args = --src /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxty1al49
+# Generating ../fonts/VendSans/webfonts/VendSans-Italic[wght].woff2
+build ../fonts/VendSans/webfonts/VendSans-Italic[wght].woff2: compress $
+    ../fonts/VendSans/variable/VendSans-Italic[wght].ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-Light.woff2
+build ../fonts/VendSans/webfonts/VendSans-Light.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-Light.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-Regular.woff2
+build ../fonts/VendSans/webfonts/VendSans-Regular.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-Regular.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-Medium.woff2
+build ../fonts/VendSans/webfonts/VendSans-Medium.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-Medium.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-SemiBold.woff2
+build ../fonts/VendSans/webfonts/VendSans-SemiBold.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-SemiBold.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-Bold.woff2
+build ../fonts/VendSans/webfonts/VendSans-Bold.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-Bold.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-LightItalic.woff2
+build ../fonts/VendSans/webfonts/VendSans-LightItalic.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-LightItalic.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-Italic.woff2
+build ../fonts/VendSans/webfonts/VendSans-Italic.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-Italic.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-MediumItalic.woff2
+build ../fonts/VendSans/webfonts/VendSans-MediumItalic.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-MediumItalic.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-SemiBoldItalic.woff2
+build ../fonts/VendSans/webfonts/VendSans-SemiBoldItalic.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-SemiBoldItalic.ttf
+  operation = compress
+# Generating ../fonts/VendSans/webfonts/VendSans-BoldItalic.woff2
+build ../fonts/VendSans/webfonts/VendSans-BoldItalic.woff2: compress $
+    ../fonts/VendSans/ttf/VendSans-BoldItalic.ttf
+  operation = compress
+# Generating ../fonts/VendSans/variable/VendSans[wght].ttf
+build ../fonts/VendSans/variable/VendSans[wght].ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpcdubr4vb
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/variable/VendSans-Italic[wght].ttf
+build ../fonts/VendSans/variable/VendSans-Italic[wght].ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp5l5wu5cj
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpamifmar1
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpamifmar1: $
+    buildTTF instance_ufos/VendSans-Light.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpiqk0xpm3
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpiqk0xpm3: $
+    buildOTF instance_ufos/VendSans-Light.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpnugtjix0
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpnugtjix0: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpamifmar1
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-Light.ttf
+build ../fonts/VendSans/ttf/VendSans-Light.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpnugtjix0
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-Light.otf
+build ../fonts/VendSans/otf/VendSans-Light.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpiqk0xpm3
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpawljo221
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpawljo221: $
+    buildTTF instance_ufos/VendSans-Regular.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpy8mo2sr2
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpy8mo2sr2: $
+    buildOTF instance_ufos/VendSans-Regular.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqz6a_y6m
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqz6a_y6m: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpawljo221
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-Regular.ttf
+build ../fonts/VendSans/ttf/VendSans-Regular.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqz6a_y6m
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-Regular.otf
+build ../fonts/VendSans/otf/VendSans-Regular.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpy8mo2sr2
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp8va9qa41
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp8va9qa41: $
+    buildTTF instance_ufos/VendSans-Medium.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpj2oc_v3x
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpj2oc_v3x: $
+    buildOTF instance_ufos/VendSans-Medium.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp33crdo3u
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp33crdo3u: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp8va9qa41
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-Medium.ttf
+build ../fonts/VendSans/ttf/VendSans-Medium.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp33crdo3u
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-Medium.otf
+build ../fonts/VendSans/otf/VendSans-Medium.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpj2oc_v3x
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpjlez8d_t
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpjlez8d_t: $
+    buildTTF instance_ufos/VendSans-SemiBold.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp1dh3dlw8
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp1dh3dlw8: $
+    buildOTF instance_ufos/VendSans-SemiBold.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpsjhugfdh
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpsjhugfdh: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpjlez8d_t
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-SemiBold.ttf
+build ../fonts/VendSans/ttf/VendSans-SemiBold.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpsjhugfdh
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-SemiBold.otf
+build ../fonts/VendSans/otf/VendSans-SemiBold.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp1dh3dlw8
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp9iqbr5nd
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp9iqbr5nd: $
+    buildTTF instance_ufos/VendSans-Bold.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp9zbdts92
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp9zbdts92: $
+    buildOTF instance_ufos/VendSans-Bold.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp81ee9blu
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp81ee9blu: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp9iqbr5nd
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-Bold.ttf
+build ../fonts/VendSans/ttf/VendSans-Bold.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp81ee9blu
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-Bold.otf
+build ../fonts/VendSans/otf/VendSans-Bold.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp9zbdts92
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpbl8fx4zd
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpbl8fx4zd: $
+    buildTTF instance_ufos/VendSans-LightItalic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqso2z9o3
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqso2z9o3: $
+    buildOTF instance_ufos/VendSans-LightItalic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp7fad0ojw
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp7fad0ojw: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpbl8fx4zd
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-LightItalic.ttf
+build ../fonts/VendSans/ttf/VendSans-LightItalic.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp7fad0ojw
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-LightItalic.otf
+build ../fonts/VendSans/otf/VendSans-LightItalic.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqso2z9o3
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqs5rcq2f
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqs5rcq2f: $
+    buildTTF instance_ufos/VendSans-Italic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxbz8u8sh
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxbz8u8sh: $
+    buildOTF instance_ufos/VendSans-Italic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp63ank9_j
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp63ank9_j: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpqs5rcq2f
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-Italic.ttf
+build ../fonts/VendSans/ttf/VendSans-Italic.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp63ank9_j
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-Italic.otf
+build ../fonts/VendSans/otf/VendSans-Italic.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxbz8u8sh
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpcshicxqm
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpcshicxqm: $
+    buildTTF instance_ufos/VendSans-MediumItalic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxubecih9
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxubecih9: $
+    buildOTF instance_ufos/VendSans-MediumItalic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpudkv1d3g
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpudkv1d3g: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpcshicxqm
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-MediumItalic.ttf
+build ../fonts/VendSans/ttf/VendSans-MediumItalic.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpudkv1d3g
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-MediumItalic.otf
+build ../fonts/VendSans/otf/VendSans-MediumItalic.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpxubecih9
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpw3lqcjhc
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpw3lqcjhc: $
+    buildTTF instance_ufos/VendSans-SemiBoldItalic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpe_svqki7
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpe_svqki7: $
+    buildOTF instance_ufos/VendSans-SemiBoldItalic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp4ozfcxuk
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp4ozfcxuk: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpw3lqcjhc
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-SemiBoldItalic.ttf
+build ../fonts/VendSans/ttf/VendSans-SemiBoldItalic.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp4ozfcxuk
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-SemiBoldItalic.otf
+build ../fonts/VendSans/otf/VendSans-SemiBoldItalic.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpe_svqki7
+  operation = fix
+  args = 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmplwa7at_0
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmplwa7at_0: $
+    buildTTF instance_ufos/VendSans-BoldItalic.ufo.json
+  operation = buildTTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmppkk6ixno
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmppkk6ixno: $
+    buildOTF instance_ufos/VendSans-BoldItalic.ufo.json
+  operation = buildOTF
+  args = --filter ...  --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter
+  fontmake_type = -u
+  fontmake_args =  --verbose WARNING 
+# Generating /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpx1v1a6bf
+build /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpx1v1a6bf: $
+    autohint /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmplwa7at_0
+  operation = autohint
+  args = --fail-ok 
+# Generating ../fonts/VendSans/ttf/VendSans-BoldItalic.ttf
+build ../fonts/VendSans/ttf/VendSans-BoldItalic.ttf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmpx1v1a6bf
+  operation = fix
+  args = 
+# Generating ../fonts/VendSans/otf/VendSans-BoldItalic.otf
+build ../fonts/VendSans/otf/VendSans-BoldItalic.otf: fix $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmppkk6ixno
+  operation = fix
+  args = 
+default ../fonts/VendSans/webfonts/VendSans[wght].woff2 $
+    /var/folders/w4/vwwfdrk12k986ttvvq4803zm0000gp/T/tmp_f75qari.buildStatstamp $
+    ../fonts/VendSans/webfonts/VendSans-Italic[wght].woff2 $
+    ../fonts/VendSans/webfonts/VendSans-Light.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-Regular.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-Medium.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-SemiBold.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-Bold.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-LightItalic.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-Italic.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-MediumItalic.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-SemiBoldItalic.woff2 $
+    ../fonts/VendSans/webfonts/VendSans-BoldItalic.woff2 $
+    ../fonts/VendSans/otf/VendSans-Light.otf $
+    ../fonts/VendSans/otf/VendSans-Regular.otf $
+    ../fonts/VendSans/otf/VendSans-Medium.otf $
+    ../fonts/VendSans/otf/VendSans-SemiBold.otf $
+    ../fonts/VendSans/otf/VendSans-Bold.otf $
+    ../fonts/VendSans/otf/VendSans-LightItalic.otf $
+    ../fonts/VendSans/otf/VendSans-Italic.otf $
+    ../fonts/VendSans/otf/VendSans-MediumItalic.otf $
+    ../fonts/VendSans/otf/VendSans-SemiBoldItalic.otf $
+    ../fonts/VendSans/otf/VendSans-BoldItalic.otf

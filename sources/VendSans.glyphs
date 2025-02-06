@@ -22,10 +22,6 @@ name = vendorID;
 value = BLOM;
 },
 {
-name = "Update Features";
-value = 1;
-},
-{
 name = "Use Typo Metrics";
 value = 1;
 },
@@ -402,6 +398,7 @@ code = "# Automatic Code
 pos period' -60 space [T V W Y];
 pos [A Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde ]' -60 space [T V W Y v w];
 pos L' -40 quoteright' 80 [A Aacute Agrave];";
+disabled = 1;
 tag = kern;
 }
 );
@@ -411,15 +408,6 @@ axesValues = (
 70
 );
 customParameters = (
-{
-name = "Axis Location";
-value = (
-{
-Axis = Weight;
-Location = 200;
-}
-);
-},
 {
 name = hheaAscender;
 value = 1100;
@@ -555,15 +543,6 @@ axesValues = (
 145
 );
 customParameters = (
-{
-name = "Axis Location";
-value = (
-{
-Axis = Weight;
-Location = 700;
-}
-);
-},
 {
 name = hheaAscender;
 value = 1100;
@@ -26229,9 +26208,104 @@ unicode = 51;
 glyphname = four;
 kernLeft = KO_four;
 kernRight = KO_four;
+lastChange = "2025-02-06 09:44:59 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
+shapes = (
+{
+closed = 1;
+nodes = (
+(409,0,l),
+(409,179,l),
+(520,179,l),
+(520,239,l),
+(409,239,l),
+(409,700,l),
+(289,700,l),
+(12,242,l),
+(12,179,l),
+(333,179,l),
+(333,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(333,651,l),
+(333,239,l),
+(88,239,l)
+);
+}
+);
+userData = {
+com.hugojourdan.ColorFlow = {
+"0" = 0;
+"1" = 0;
+"10" = 0;
+"11" = 0;
+"2" = 0;
+"3" = 0;
+"4" = 0;
+"5" = 0;
+"6" = 0;
+"7" = 0;
+"8" = 0;
+"9" = 0;
+};
+};
+width = 582;
+},
+{
+layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
+shapes = (
+{
+closed = 1;
+nodes = (
+(469,0,l),
+(469,151,l),
+(559,151,l),
+(559,270,l),
+(469,270,l),
+(469,700,l),
+(248,700,l),
+(14,274,l),
+(14,151,l),
+(325,151,l),
+(325,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(325,617,l),
+(325,270,l),
+(141,270,l)
+);
+}
+);
+userData = {
+com.hugojourdan.ColorFlow = {
+"0" = 0;
+"1" = 0;
+"10" = 0;
+"11" = 0;
+"2" = 0;
+"3" = 0;
+"4" = 0;
+"5" = 0;
+"6" = 0;
+"7" = 0;
+"8" = 0;
+"9" = 0;
+};
+};
+width = 600;
+},
+{
+associatedMasterId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
+layerId = "35234638-7BC7-4E6B-9708-070F472C28BD";
+name = "6 Feb 25 at 10:44";
 shapes = (
 {
 closed = 1;
@@ -26271,7 +26345,9 @@ com.hugojourdan.ColorFlow = {
 width = 582;
 },
 {
-layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
+associatedMasterId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
+layerId = "47F30929-C9F9-4AD7-90AF-9221D93BA3CA";
+name = "6 Feb 25 at 10:44";
 shapes = (
 {
 closed = 1;
