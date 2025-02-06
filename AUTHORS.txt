@@ -4,5 +4,6 @@
 #
 # Names should be added to this file as:
 # Name or Organization <email address>
+Bold Scandinavia
 Baptiste Guesnon (Bloom Type Foundry) <baptiste@bloomtype.com>
 
