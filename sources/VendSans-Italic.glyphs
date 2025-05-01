@@ -3,7 +3,8 @@
 .formatVersion = 3;
 DisplayStrings = (
 "ME:H.",
-"H‘H"
+"H‘H",
+"÷"
 );
 axes = (
 {
@@ -40689,19 +40690,19 @@ R = math;
 },
 {
 glyphname = divide;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-01 13:39:06 +0000";
 layers = (
 {
 layerId = "73572E25-487C-487F-975F-150A505979A5";
 shapes = (
 {
 alignment = -1;
-pos = (213,43);
+pos = (176,43);
 ref = period;
 },
 {
 alignment = -1;
-pos = (298,442);
+pos = (261,442);
 ref = period;
 },
 {
@@ -40731,12 +40732,12 @@ layerId = "66114D67-63CC-4821-8086-0090D571F0A1";
 shapes = (
 {
 alignment = -1;
-pos = (198,43);
+pos = (168,43);
 ref = period;
 },
 {
 alignment = -1;
-pos = (283,447);
+pos = (253,447);
 ref = period;
 },
 {

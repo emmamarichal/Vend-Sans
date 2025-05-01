@@ -40269,19 +40269,19 @@ R = math;
 },
 {
 glyphname = divide;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-01 13:38:35 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
 shapes = (
 {
 alignment = -1;
-pos = (204,43);
+pos = (163,43);
 ref = period;
 },
 {
 alignment = -1;
-pos = (204,442);
+pos = (163,442);
 ref = period;
 },
 {
@@ -40311,12 +40311,12 @@ layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
 shapes = (
 {
 alignment = -1;
-pos = (188,43);
+pos = (156,43);
 ref = period;
 },
 {
 alignment = -1;
-pos = (188,447);
+pos = (156,447);
 ref = period;
 },
 {
