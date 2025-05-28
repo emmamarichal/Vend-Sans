@@ -55,6 +55,19 @@ value = "73572E25-487C-487F-975F-150A505979A5";
 name = fsType;
 value = (
 );
+},
+{
+name = "meta Table";
+value = (
+{
+data = Latn;
+tag = dlng;
+},
+{
+data = Latn;
+tag = slng;
+}
+);
 }
 );
 date = "2025-02-06 08:55:11 +0000";

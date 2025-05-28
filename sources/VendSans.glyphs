@@ -55,6 +55,19 @@ value = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
 name = fsType;
 value = (
 );
+},
+{
+name = "meta Table";
+value = (
+{
+data = Latn;
+tag = dlng;
+},
+{
+data = Latn;
+tag = slng;
+}
+);
 }
 );
 date = "2025-02-06 08:55:16 +0000";
