@@ -55,18 +55,6 @@ name = "Use Typo Metrics";
 value = 1;
 },
 {
-name = "Axis Mappings";
-value = {
-wght = {
-300 = 70;
-400 = 90;
-500 = 110;
-600 = 125;
-700 = 145;
-};
-};
-},
-{
 name = "Family Alignment Zones";
 value = (
 {
@@ -98,7 +86,6 @@ value = "73572E25-487C-487F-975F-150A505979A5";
 {
 name = fsType;
 value = (
-3
 );
 }
 );
@@ -489,6 +476,15 @@ value = 110;
 disabled = 1;
 name = strikeoutPosition;
 value = 350;
+},
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 300;
+}
+);
 }
 );
 iconName = Light;
@@ -586,6 +582,15 @@ value = 110;
 disabled = 1;
 name = strikeoutPosition;
 value = 350;
+},
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 700;
+}
+);
 }
 );
 iconName = Bold;
@@ -45974,12 +45979,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 300;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -45996,12 +46002,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 400;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -46009,7 +46016,6 @@ instanceInterpolations = {
 "73572E25-487C-487F-975F-150A505979A5" = 0.73333;
 };
 isItalic = 1;
-linkStyle = Regular;
 name = Italic;
 },
 {
@@ -46018,12 +46024,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 500;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -46041,12 +46048,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 600;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -46064,12 +46072,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 700;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -63704,6 +63713,19 @@ value = "Bold Scandinavia";
 {
 key = designerURL;
 value = "https://bloomtype.com";
+},
+{
+key = licenses;
+values = (
+{
+language = dflt;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org";
+}
+);
+},
+{
+key = licenseURL;
+value = "https://openfontlicense.org";
 },
 {
 key = manufacturers;

@@ -1,19 +1,6 @@
 {
 .appVersion = "3414";
 .formatVersion = 3;
-DisplayStrings = (
-"ą}
-í/backslash  í]
-î* î/backslash  î{
-ï/backslash  ï}
-ì* ì/backslash 
-ī* ī/backslash  ī) ī}
-ŋ}
-ø? ø# ø{ ø/parenleft.case  ø/braceleft.case 
-ŕ) ŕ} ŕ]
-ř) ř} ř]
-"
-);
 axes = (
 {
 name = Weight;
@@ -34,18 +21,6 @@ value = BLOM;
 {
 name = "Use Typo Metrics";
 value = 1;
-},
-{
-name = "Axis Mappings";
-value = {
-wght = {
-300 = 70;
-400 = 90;
-500 = 110;
-600 = 125;
-700 = 145;
-};
-};
 },
 {
 name = "Family Alignment Zones";
@@ -469,6 +444,15 @@ value = 110;
 disabled = 1;
 name = strikeoutPosition;
 value = 350;
+},
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 300;
+}
+);
 }
 );
 iconName = Light;
@@ -604,6 +588,15 @@ value = 110;
 disabled = 1;
 name = strikeoutPosition;
 value = 350;
+},
+{
+name = "Axis Location";
+value = (
+{
+Axis = Weight;
+Location = 700;
+}
+);
 }
 );
 iconName = Bold;
@@ -16061,7 +16054,7 @@ unicode = 316;
 {
 glyphname = ldot;
 kernLeft = KO_l;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:12 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -16091,7 +16084,7 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 327;
+width = 365;
 },
 {
 layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
@@ -16122,7 +16115,7 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 404;
+width = 433;
 }
 );
 metricLeft = l;
@@ -21861,6 +21854,7 @@ color = 1;
 glyphname = j.ss01;
 kernLeft = KO_i;
 kernRight = KO_i;
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -24028,13 +24022,13 @@ width = 610;
 {
 export = 0;
 glyphname = aogonek.ss03;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 anchors = (
 {
 name = top;
-pos = (280,546);
+pos = (288,546);
 }
 );
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -24069,7 +24063,7 @@ width = 588;
 anchors = (
 {
 name = top;
-pos = (299,560);
+pos = (305,560);
 }
 );
 layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
@@ -24236,24 +24230,25 @@ width = 610;
 {
 export = 0;
 glyphname = u.ss11;
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 anchors = (
 {
 name = bottom;
-pos = (109,0);
+pos = (101,0);
 },
 {
 name = ogonek;
-pos = (347,10);
+pos = (339,10);
 },
 {
 name = top;
-pos = (109,546);
+pos = (101,546);
 },
 {
 name = topright;
-pos = (386,546);
+pos = (378,546);
 }
 );
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -24286,19 +24281,19 @@ width = 586;
 anchors = (
 {
 name = bottom;
-pos = (121,0);
+pos = (115,0);
 },
 {
 name = ogonek;
-pos = (365,10);
+pos = (359,10);
 },
 {
 name = top;
-pos = (121,560);
+pos = (115,560);
 },
 {
 name = topright;
-pos = (406,560);
+pos = (400,560);
 }
 );
 layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
@@ -27486,7 +27481,7 @@ metricWidth = "=600";
 },
 {
 glyphname = four.tf;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:30 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -29454,7 +29449,7 @@ unicode = 190;
 },
 {
 glyphname = oneeighth;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -29533,7 +29528,7 @@ unicode = 8539;
 },
 {
 glyphname = threeeighths;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -29612,7 +29607,7 @@ unicode = 8540;
 },
 {
 glyphname = fiveeighths;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -29691,7 +29686,7 @@ unicode = 8541;
 },
 {
 glyphname = seveneighths;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:09:17 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
@@ -36232,7 +36227,7 @@ R = symbols;
 {
 glyphname = ampersand;
 kernRight = KO_ampersand;
-lastChange = "2025-02-27 13:21:19 +0000";
+lastChange = "2025-05-28 12:09:12 +0000";
 layers = (
 {
 background = {
@@ -36430,46 +36425,46 @@ shapes = (
 {
 closed = 1;
 nodes = (
-(548,-11,o),
-(557,-10,o),
-(575,-3,c),
-(571,106,l),
-(563,103,o),
-(555,103,o),
-(549,103,cs),
-(526,103,o),
-(482,117,o),
-(434,177,cs),
-(259,398,ls),
-(227,439,o),
-(198,477,o),
-(198,520,cs),
-(198,574,o),
-(231,601,o),
-(281,601,cs),
-(321,601,o),
-(360,577,o),
-(360,524,cs),
-(360,445,o),
-(293,410,o),
-(232,408,c),
-(276,330,l),
-(393,351,o),
-(492,404,o),
-(492,530,cs),
-(492,646,o),
-(408,715,o),
-(286,715,cs),
-(155,715,o),
-(68,642,o),
-(68,523,cs),
-(68,457,o),
-(104,394,o),
-(153,335,cs),
-(353,95,ls),
-(413,23,o),
-(488,-11,o),
-(534,-11,cs)
+(568,-11,o),
+(577,-10,o),
+(595,-3,c),
+(591,106,l),
+(583,103,o),
+(575,103,o),
+(569,103,cs),
+(546,103,o),
+(502,117,o),
+(454,177,cs),
+(279,398,ls),
+(247,439,o),
+(218,477,o),
+(218,520,cs),
+(218,574,o),
+(251,601,o),
+(301,601,cs),
+(341,601,o),
+(380,577,o),
+(380,524,cs),
+(380,445,o),
+(313,410,o),
+(252,408,c),
+(296,330,l),
+(413,351,o),
+(512,404,o),
+(512,530,cs),
+(512,646,o),
+(428,715,o),
+(306,715,cs),
+(175,715,o),
+(88,642,o),
+(88,523,cs),
+(88,457,o),
+(124,394,o),
+(173,335,cs),
+(373,95,ls),
+(433,23,o),
+(508,-11,o),
+(554,-11,cs)
 );
 },
 {
@@ -36478,39 +36473,39 @@ strokePos = "1";
 };
 closed = 1;
 nodes = (
-(361,-15,o),
-(434,29,o),
-(465,105,c),
-(373,148,l),
-(331,96,o),
-(300,89,o),
-(258,89,cs),
-(179,89,o),
-(132,144,o),
-(132,200,cs),
-(132,252,o),
-(157,295,o),
-(218,311,c),
-(202,391,l),
-(83,378,o),
-(0,307,o),
-(0,189,cs),
-(0,72,o),
-(92,-15,o),
-(248,-15,cs)
+(381,-15,o),
+(454,29,o),
+(485,105,c),
+(393,148,l),
+(351,96,o),
+(320,89,o),
+(278,89,cs),
+(199,89,o),
+(152,144,o),
+(152,200,cs),
+(152,252,o),
+(177,295,o),
+(238,311,c),
+(222,391,l),
+(103,378,o),
+(20,307,o),
+(20,189,cs),
+(20,72,o),
+(112,-15,o),
+(268,-15,cs)
 );
 },
 {
 closed = 1;
 nodes = (
-(530,171,o),
-(546,246,o),
-(535,312,c),
-(419,299,l),
-(434,225,o),
-(404,183,o),
-(365,143,c),
-(479,112,l)
+(550,171,o),
+(566,246,o),
+(555,312,c),
+(439,299,l),
+(454,225,o),
+(424,183,o),
+(385,143,c),
+(499,112,l)
 );
 }
 );
@@ -36530,7 +36525,7 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 595;
+width = 615;
 }
 );
 metricLeft = "=20";
@@ -38601,7 +38596,7 @@ R = symbols;
 export = 0;
 glyphname = ampersand.old2;
 kernRight = KO_ampersand;
-lastChange = "2025-02-27 13:21:10 +0000";
+lastChange = "2025-05-28 12:09:12 +0000";
 layers = (
 {
 background = {
@@ -38783,7 +38778,7 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 617;
+width = 596;
 },
 {
 layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
@@ -45420,12 +45415,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 300;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -45440,12 +45436,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 400;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -45460,12 +45457,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 500;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -45481,12 +45479,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 600;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -45502,12 +45501,13 @@ axesValues = (
 );
 customParameters = (
 {
-name = "Remove post names for webfonts";
-value = 0;
-},
+name = "Axis Location";
+value = (
 {
-name = "Webfont Only";
-value = 0;
+Axis = Weight;
+Location = 700;
+}
+);
 }
 );
 instanceInterpolations = {
@@ -64949,17 +64949,26 @@ key = designers;
 values = (
 {
 language = dflt;
-value = "Baptiste Guesnon";
-},
-{
-language = dflt;
-value = "Bold Scandinavia";
+value = "Baptiste Guesnon, Bold Scandinavia";
 }
 );
 },
 {
 key = designerURL;
 value = "https://bloomtype.com";
+},
+{
+key = licenses;
+values = (
+{
+language = dflt;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org";
+}
+);
+},
+{
+key = licenseURL;
+value = "https://openfontlicense.org";
 },
 {
 key = manufacturers;
