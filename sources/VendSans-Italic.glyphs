@@ -1,38 +1,6 @@
 {
 .appVersion = "3414";
 .formatVersion = 3;
-DisplayStrings = (
-"ME:H.",
-"H‘H",
-"ąj ąȷ ą/j.ss01  ą/jdotless.ss01  ą/j.ss02  ą/jdotless.ss02 
-dî
-ďħ ďí ďî ďï ďì ďī
-đħ đí đî đï đì đī đł
-ðł
-fí fî fï fì fī
-iî iī
-íî íï íì íī íĺ íř
-îb îh îħ îi îí îî îï î/idotaccent  îì îī îį îj îk îķ îl îĺ îľ îļ îþ îŕ î/j.ss01  î/l.ss01  î/j.ss02  î/l.ss02 
-ïħ ïí ïî ïï ïì ïī ïŕ
-/idotaccent î /idotaccent ī
-ìħ ìí ìî ìï ìī ìŕ
-īħ īi īí īî īï ī/idotaccent  īì īī īį īj īŕ ī/j.ss01  ī/j.ss02 
-įî įī
-jî jī
-ľî ľì ľī
-øł
-ŕï ŕì ŕī
-řì řī
-ťí ťî ťï ťì ťī ťř ťš
-/j.ss01 î /j.ss01 ī
-a/r.ss01 x
-/j.ss02 î /j.ss02 ī
-/r.ss02 x
-/f_f í /f_f î /f_f ï /f_f ì /f_f ī
-/f_f_i î /f_f_i ī
-/f_i î /f_i ī
-ﬁî ﬁī"
-);
 axes = (
 {
 name = Weight;
@@ -31973,10 +31941,30 @@ unicode = 160;
 {
 color = 0;
 glyphname = .notdef;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:19:18 +0000";
 layers = (
 {
 layerId = "73572E25-487C-487F-975F-150A505979A5";
+shapes = (
+{
+closed = 1;
+nodes = (
+(433,0,l),
+(582,700,l),
+(181,700,l),
+(32,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(238,640,l),
+(499,640,l),
+(376,60,l),
+(115,60,l)
+);
+}
+);
 userData = {
 com.hugojourdan.ColorFlow = {
 "0" = 0;
@@ -31993,10 +31981,30 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 760;
+width = 581;
 },
 {
 layerId = "66114D67-63CC-4821-8086-0090D571F0A1";
+shapes = (
+{
+closed = 1;
+nodes = (
+(461,0,l),
+(609,700,l),
+(153,700,l),
+(5,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(273,584,l),
+(440,584,l),
+(341,116,l),
+(174,116,l)
+);
+}
+);
 userData = {
 com.hugojourdan.ColorFlow = {
 "0" = 0;
@@ -32013,9 +32021,11 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 760;
+width = 585;
 }
 );
+metricLeft = I;
+metricRight = I;
 },
 {
 glyphname = period;

@@ -31883,10 +31883,30 @@ unicode = 160;
 {
 color = 0;
 glyphname = .notdef;
-lastChange = "2025-02-06 07:51:02 +0000";
+lastChange = "2025-05-28 12:20:45 +0000";
 layers = (
 {
 layerId = "AC72BA4F-EBEC-4C28-9168-13A8176B9035";
+shapes = (
+{
+closed = 1;
+nodes = (
+(489,0,l),
+(489,700,l),
+(90,700,l),
+(90,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(160,640,l),
+(419,640,l),
+(419,60,l),
+(160,60,l)
+);
+}
+);
 userData = {
 com.hugojourdan.ColorFlow = {
 "0" = 0;
@@ -31903,10 +31923,30 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 760;
+width = 619;
 },
 {
 layerId = "BC57D14F-D7AD-4877-A02E-2DA2D5328E1F";
+shapes = (
+{
+closed = 1;
+nodes = (
+(519,0,l),
+(519,700,l),
+(64,700,l),
+(64,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(209,584,l),
+(374,584,l),
+(374,116,l),
+(209,116,l)
+);
+}
+);
 userData = {
 com.hugojourdan.ColorFlow = {
 "0" = 0;
@@ -31923,9 +31963,11 @@ com.hugojourdan.ColorFlow = {
 "9" = 0;
 };
 };
-width = 760;
+width = 583;
 }
 );
+metricLeft = I;
+metricRight = I;
 },
 {
 glyphname = period;
