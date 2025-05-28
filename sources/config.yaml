@@ -5,7 +5,7 @@ axisOrder:
   - wght
   - ital
 familyName: Vend Sans
-outputDir: "../fonts/VendSans"
+cleanUp: true
 stat:
   VendSans[wght].ttf:
   - name: Weight
